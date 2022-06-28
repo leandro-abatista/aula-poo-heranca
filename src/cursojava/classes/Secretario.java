@@ -60,6 +60,12 @@ public class Secretario extends Pessoa {
 				+ "\n, nomePai=" + nomePai 
 				+ "\n]";
 	}
+
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 1800.90 * 0.2;
+	}
 	
 	
 

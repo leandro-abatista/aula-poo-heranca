@@ -15,6 +15,9 @@ public abstract class Pessoa {
 	protected String numeroCpf;
 	protected String nomeMae;
 	protected String nomePai;
+	
+	/*MÉTODO ABSTRACT QUE FICA NA CLASSE PAI, É OBRIGATÓRIO PARA AS CLASSES FILHAS*/
+	public abstract double salario();
 
 	public String getNome() {
 		return nome;
