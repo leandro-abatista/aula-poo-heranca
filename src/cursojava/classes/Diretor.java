@@ -2,6 +2,7 @@ package cursojava.classes;
 
 /**
  * USANDO HERANÇA COM EXTENDS
+ * CLASSE FILHA DE PESSOA
  * DIRETOR ESTÁ EXTENDENDO DA CLASSE PESSOA
  */
 public class Diretor extends Pessoa {
@@ -33,5 +34,13 @@ public class Diretor extends Pessoa {
 	public void setTitulacao(String titulacao) {
 		this.titulacao = titulacao;
 	}
+
+	@Override
+	public String toString() {
+		return "Diretor [registroEducacao=" + registroEducacao + ", tempoDirecao=" + tempoDirecao + ", titulacao="
+				+ titulacao + "]";
+	}
+	
+	
 
 }

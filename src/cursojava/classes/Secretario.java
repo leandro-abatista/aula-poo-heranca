@@ -2,6 +2,7 @@ package cursojava.classes;
 
 /**
  * USANDO HERANÇA COM EXTENDS 
+ * CLASSE FILHA DE PESSOA
  * SECRETARIO ESTÁ EXTENDENDO DA CLASSE PESSOA
  */
 public class Secretario extends Pessoa {
@@ -33,5 +34,23 @@ public class Secretario extends Pessoa {
 	public void setExperiencia(String experiencia) {
 		this.experiencia = experiencia;
 	}
+
+	@Override
+	public String toString() {
+		return "Secretario "
+				+ "\n[registro=" + registro 
+				+ "\n, nivelCargo=" + nivelCargo 
+				+ "\n, experiencia=" + experiencia
+				+ "\n, nome=" + nome 
+				+ "\n, idade=" + idade 
+				+ "\n, dataNascimento=" + dataNascimento 
+				+ "\n, registroGeral=" + registroGeral 
+				+ "\n, numeroCpf=" + numeroCpf 
+				+ "\n, nomeMae=" + nomeMae 
+				+ "\n, nomePai=" + nomePai 
+				+ "\n]";
+	}
+	
+	
 
 }
