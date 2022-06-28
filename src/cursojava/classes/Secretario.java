@@ -34,6 +34,16 @@ public class Secretario extends Pessoa {
 	public void setExperiencia(String experiencia) {
 		this.experiencia = experiencia;
 	}
+	
+	@Override
+	public boolean pessoaMaiorIdade() {
+		// TODO Auto-generated method stub
+		return super.idade >= 18;
+	}
+	
+	public String msgMaiorDeIdade() {
+		return this.pessoaMaiorIdade() ? "É maior de Idade" : "É menor de Idade";
+	}
 
 	@Override
 	public String toString() {

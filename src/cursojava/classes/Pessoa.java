@@ -70,5 +70,13 @@ public class Pessoa {
 	public void setNomePai(String nomePai) {
 		this.nomePai = nomePai;
 	}
+	
+	/**
+	 * MÉTODO RETURN TRUE SE FOR 18 ANOS ACIMA, SE NÃO RETORN FALSE
+	 * @return
+	 */
+	public boolean pessoaMaiorIdade() {
+		return idade >= 18;
+	}
 
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cursojava.constantes.StatusAluno;
+import cursojava.constantes.StatusAlunoMaiorIdade;
 
 /**
  * USANDO HERANÇA COM EXTENDS
@@ -92,6 +93,17 @@ public class Aluno extends Pessoa {
 			//return "Aluno est� reprovado";
 			return StatusAluno.REPROVADO;
 		}
+	}
+	
+	@Override/*IDENTIFICA MÉTODO SOBREESCRITA, UM MÉTODO QUE JÁ EXISTE NA CLASSE PAI OU SUPERCLASSE PESSOA*/
+	public boolean pessoaMaiorIdade() {
+		/*REESCREVI O MÉTODO QUE JÁ EXISTIA NA CLASSE PAI OU SUPER CLASSE PESSOA*/
+		if (super.idade >= 18) {
+			System.out.println(StatusAlunoMaiorIdade.MAIORIDADE);
+			return true;
+		}
+		System.out.println(StatusAlunoMaiorIdade.MENORIDADE);
+		return false;
 	}
 
 	@Override

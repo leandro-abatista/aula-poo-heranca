@@ -1,5 +1,7 @@
 package cursojava.classes;
 
+import cursojava.constantes.StatusAlunoMaiorIdade;
+
 /**
  * USANDO HERANÇA COM EXTENDS
  * CLASSE FILHA DE PESSOA
@@ -33,6 +35,17 @@ public class Diretor extends Pessoa {
 
 	public void setTitulacao(String titulacao) {
 		this.titulacao = titulacao;
+	}
+	
+	@Override/*IDENTIFICA MÉTODO SOBREESCRITA, UM MÉTODO QUE JÁ EXISTE NA CLASSE PAI OU SUPERCLASSE PESSOA*/
+	public boolean pessoaMaiorIdade() {
+		/*REESCREVI O MÉTODO QUE JÁ EXISTIA NA CLASSE PAI OU SUPER CLASSE PESSOA*/
+		if (super.idade >= 18) {
+			System.out.println(StatusAlunoMaiorIdade.MAIORIDADE);
+			return true;
+		}
+		System.out.println(StatusAlunoMaiorIdade.MENORIDADE);
+		return false;
 	}
 
 	@Override
