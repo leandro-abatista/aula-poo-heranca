@@ -48,15 +48,20 @@ public class Diretor extends Pessoa {
 		return false;
 	}
 
+	
 	@Override
 	public String toString() {
 		return "Diretor [registroEducacao=" + registroEducacao + ", tempoDirecao=" + tempoDirecao + ", titulacao="
-				+ titulacao + "]";
+				+ titulacao + ", nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento
+				+ ", registroGeral=" + registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae
+				+ ", nomePai=" + nomePai + "]";
 	}
 
 	@Override
 	public double salario() {
-		return 3900.00 * 0.5;
+		double aumento = 0.0;
+		aumento = 3900 * 0.1;
+		return 3900 + aumento;
 	}
 	
 	

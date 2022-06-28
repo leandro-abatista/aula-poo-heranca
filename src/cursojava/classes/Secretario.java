@@ -63,8 +63,9 @@ public class Secretario extends Pessoa {
 
 	@Override
 	public double salario() {
-		// TODO Auto-generated method stub
-		return 1800.90 * 0.2;
+		double aumento = 0.0;
+		aumento = 2200 * 0.5;
+		return 2200 + aumento;
 	}
 	
 	

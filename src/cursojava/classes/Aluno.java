@@ -125,7 +125,9 @@ public class Aluno extends Pessoa {
 
 	@Override
 	public double salario() {
-		return 1500.90 * 0.1;
+		double aumento = 0.0;
+		aumento = 1590.90 * 0.2;
+		return 1500.90 + aumento;
 	}
 
 }
