@@ -10,6 +10,7 @@ import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 
 public class Executavel {
@@ -19,11 +20,16 @@ public class Executavel {
 		String login = JOptionPane.showInputDialog("Informe o Login");
 		String senha = JOptionPane.showInputDialog("Informe o Senha");
 		
-		Secretario secretario = new Secretario();
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
-
-		if (secretario.autenticar()) {
+//		Secretario secretario = new Secretario();/*DIRETAMENTE COM O OBJETO*/
+//		secretario.setLogin(login);
+//		secretario.setSenha(senha);
+		
+		
+//		PermitirAcesso secretario = new Secretario();/*DIRETAMENTE COM O OBJETO*/
+		
+		
+		/*PARA MELHORA E ENXUGAR AINDA MAIS O CÓDIGO*/
+		if (new Secretario().autenticarComParametros(login, senha)) {
 
 			List<Aluno> alunos = new ArrayList<>();// lista para adicionar os alunos
 

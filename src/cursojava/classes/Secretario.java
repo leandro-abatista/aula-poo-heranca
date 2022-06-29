@@ -13,8 +13,8 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	private String nivelCargo;
 	private String experiencia;
 	
-	private String login;
-	private String senha;
+//	private String login;
+//	private String senha;
 
 	public int getRegistro() {
 		return registro;
@@ -40,21 +40,21 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 		this.experiencia = experiencia;
 	}
 	
-	public String getLogin() {
-		return login;
-	}
-	
-	public void setLogin(String login) {
-		this.login = login;
-	}
-	
-	public String getSenha() {
-		return senha;
-	}
-	
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+//	public String getLogin() {
+//		return login;
+//	}
+//	
+//	public void setLogin(String login) {
+//		this.login = login;
+//	}
+//	
+//	public String getSenha() {
+//		return senha;
+//	}
+//	
+//	public void setSenha(String senha) {
+//		this.senha = senha;
+//	}
 	
 	@Override
 	public boolean pessoaMaiorIdade() {
@@ -93,12 +93,26 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	 * MÉTODO DO CONTRATO DE AUTENTICAÇÃO
 	 * RETORNA TRUE SE O LOGIN FOR ADMIN E SENHA SE FOR ADMIN, CASO CONTRÁRIO RETORNA FALSE
 	 */
+//	@Override
+//	public boolean autenticar() {
+//		if (this.login.equalsIgnoreCase("admin")
+//				&& this.senha.equalsIgnoreCase("admin")) {
+//			return true;
+//		}
+//		return false;
+//	}
+	
+	/**
+	 * MÉTODO AUTENTICAR COM PARÂMTEROS
+	 */
+	@Override
+	public boolean autenticarComParametros(String login, String senha) {
+		return login.equals("admin") && senha.equals("admin");
+	}
+
 	@Override
 	public boolean autenticar() {
-		if (this.login.equalsIgnoreCase("admin")
-				&& this.senha.equalsIgnoreCase("admin")) {
-			return true;
-		}
+		// TODO Auto-generated method stub
 		return false;
 	}
 	
