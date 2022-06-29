@@ -7,8 +7,10 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
+import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
+import cursojava.classesAuxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
 import cursojava.interfaces.PermitirAcesso;
 
@@ -27,11 +29,14 @@ public class Executavel {
 		
 //		PermitirAcesso secretario = new Secretario();/*DIRETAMENTE COM O OBJETO*/
 		
-		PermitirAcesso permitirAcesso = new Secretario(login, senha);
+		//FuncaoAutenticacao funcaoAutenticacao = new FuncaoAutenticacao();
+		
+		/*ESSA INTERFACE ESTÁ RECEBENDO O OBJETO DO TIPO SECRETÁRIO*/
+		//PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
 		
 		/*PARA MELHORA E ENXUGAR AINDA MAIS O CÓDIGO*/
-		if (permitirAcesso.autenticar(login, senha)) {
+		if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticarCursoJava()) {/*Vou travar o contrato para autorizar somente quem tem o acesso*/
 
 			List<Aluno> alunos = new ArrayList<>();// lista para adicionar os alunos
 
