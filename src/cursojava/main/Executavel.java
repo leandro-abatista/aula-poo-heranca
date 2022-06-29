@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
+import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
 
 
@@ -17,8 +18,12 @@ public class Executavel {
 
 		String login = JOptionPane.showInputDialog("Informe o Login");
 		String senha = JOptionPane.showInputDialog("Informe o Senha");
+		
+		Secretario secretario = new Secretario();
+		secretario.setLogin(login);
+		secretario.setSenha(senha);
 
-		if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
+		if (secretario.autenticar()) {
 
 			List<Aluno> alunos = new ArrayList<>();// lista para adicionar os alunos
 
@@ -225,6 +230,8 @@ public class Executavel {
 //		}
 //		
 //	}
+		} else {
+			JOptionPane.showMessageDialog(null, "Acesso não permitido!\nLogin e/ou senha incorreto!");
 		}
 	}
 
