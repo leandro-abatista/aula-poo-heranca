@@ -9,5 +9,5 @@ public interface PermitirAcesso {
 
 	/*APENAS DECLARANDO O MÉTODO*/
 	public boolean autenticar();
-	public boolean autenticarComParametros(String login, String senha);
+	public boolean autenticar(String login, String senha);
 }

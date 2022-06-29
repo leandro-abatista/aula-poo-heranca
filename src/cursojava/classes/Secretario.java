@@ -13,8 +13,17 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	private String nivelCargo;
 	private String experiencia;
 	
-//	private String login;
-//	private String senha;
+	private String login;
+	private String senha;
+	
+	public Secretario() {
+		
+	}
+	
+	public Secretario(String login, String senha) {
+		this.login = login;
+		this.senha = senha;
+	}
 
 	public int getRegistro() {
 		return registro;
@@ -40,21 +49,21 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 		this.experiencia = experiencia;
 	}
 	
-//	public String getLogin() {
-//		return login;
-//	}
-//	
-//	public void setLogin(String login) {
-//		this.login = login;
-//	}
-//	
-//	public String getSenha() {
-//		return senha;
-//	}
-//	
-//	public void setSenha(String senha) {
-//		this.senha = senha;
-//	}
+	public String getLogin() {
+		return login;
+	}
+	
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	
+	public String getSenha() {
+		return senha;
+	}
+	
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 	
 	@Override
 	public boolean pessoaMaiorIdade() {
@@ -106,16 +115,19 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	 * MÉTODO AUTENTICAR COM PARÂMTEROS
 	 */
 	@Override
-	public boolean autenticarComParametros(String login, String senha) {
-		return login.equals("admin") && senha.equals("admin");
+	public boolean autenticar(String login, String senha) {
+		/*SE QUISER DECLARAR OS ATRIBUTOS ABAIXO, SE NÃO, FUNCIONA DO MESMO JEITO*/
+		this.login = login;
+		this.senha = senha;
+		/*CHAMANDO O MÉTODO SEM PARÂMETROS, ISSO É REAPROVEITAMENTO DE CÓDIGO*/
+		return autenticar();
 	}
 
 	@Override
 	public boolean autenticar() {
-		// TODO Auto-generated method stub
-		return false;
+		return login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin");
 	}
-	
+
 	
 
 }

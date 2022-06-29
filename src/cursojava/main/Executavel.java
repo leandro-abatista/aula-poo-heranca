@@ -27,9 +27,11 @@ public class Executavel {
 		
 //		PermitirAcesso secretario = new Secretario();/*DIRETAMENTE COM O OBJETO*/
 		
+		PermitirAcesso permitirAcesso = new Secretario(login, senha);
+		
 		
 		/*PARA MELHORA E ENXUGAR AINDA MAIS O CÓDIGO*/
-		if (new Secretario().autenticarComParametros(login, senha)) {
+		if (permitirAcesso.autenticar(login, senha)) {
 
 			List<Aluno> alunos = new ArrayList<>();// lista para adicionar os alunos
 
