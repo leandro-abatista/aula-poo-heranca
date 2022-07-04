@@ -1,8 +1,10 @@
 package cursojava.main;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -18,9 +20,16 @@ import cursojava.interfaces.PermitirAcesso;
 public class Executavel {
 
 	public static void main(String[] args) {
+		
+		try {
+			
+		File file = new File("arquivo.txt");
+		Scanner scanner = new Scanner(file);
 
 		String login = JOptionPane.showInputDialog("Informe o Login");
 		String senha = JOptionPane.showInputDialog("Informe o Senha");
+		
+		
 		
 //		Secretario secretario = new Secretario();/*DIRETAMENTE COM O OBJETO*/
 //		secretario.setLogin(login);
@@ -38,6 +47,7 @@ public class Executavel {
 		/*PARA MELHORA E ENXUGAR AINDA MAIS O CÓDIGO*/
 		if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticarCursoJava()) {/*Vou travar o contrato para autorizar somente quem tem o acesso*/
 
+//			List<Aluno> alunos = null;//exemplo para gerar erro
 			List<Aluno> alunos = new ArrayList<>();// lista para adicionar os alunos
 
 			/* chave, valor */
@@ -47,14 +57,14 @@ public class Executavel {
 			 */
 			HashMap<String, List<Aluno>> maps = new HashMap<>();
 
-//		List<Aluno> alunosAprovados = new ArrayList<>();
-//		List<Aluno> alunosRecuperacao = new ArrayList<>();
-//		List<Aluno> alunosreprovados = new ArrayList<>();
+//			List<Aluno> alunosAprovados = new ArrayList<>();
+//			List<Aluno> alunosRecuperacao = new ArrayList<>();
+//			List<Aluno> alunosreprovados = new ArrayList<>();
 
-			for (int quantidade = 1; quantidade <= 5; quantidade++) {
+			for (int quantidade = 1; quantidade <= 1; quantidade++) {
 
-				String nome = JOptionPane.showInputDialog("Qual o nome do Aluno? ");
-				// String idade = JOptionPane.showInputDialog("Qual a idade do Aluno? ");
+				String nome = JOptionPane.showInputDialog("Qual o nome do Aluno " +quantidade+ "?");
+				String idade = JOptionPane.showInputDialog("Qual a idade do Aluno? ");
 				// String dataNasc = JOptionPane.showInputDialog("Qual a data nascimento do
 				// Aluno? ");
 				// String cpf = JOptionPane.showInputDialog("Qual o CPF do Aluno? ");
@@ -71,7 +81,7 @@ public class Executavel {
 				// setando os dados os dados no objeto aluno
 				Aluno aluno = new Aluno();
 				aluno.setNome(nome.toUpperCase());
-				// aluno.setIdade(Integer.valueOf(idade));
+				aluno.setIdade(Integer.valueOf(idade));
 				// aluno.setDataNascimento(dataNasc);
 				// aluno.setNumeroCpf(cpf);
 				// aluno.setRegistroGeral(rg);
@@ -246,6 +256,83 @@ public class Executavel {
 		} else {
 			JOptionPane.showMessageDialog(null, "Acesso não permitido!\nLogin e/ou senha incorreto!");
 		}
+		
+		} catch (NullPointerException erro) {
+			//CLASSE JAVA PARA TRABALHAR COM TEXTOS
+			StringBuilder saidaDeTexto = new StringBuilder();
+			
+			/*O EXCEPTION É GENÉRICO*/
+			erro.printStackTrace();/*Imprime a pilha de erro no console java*/
+			
+			/*MESSAGEEM DO ERRO OU CAUSA*/
+			System.out.println("Mensagem de erro :: " + erro.getMessage());
+			
+			for(int i = 0; i < erro.getStackTrace().length; i++) {
+//				System.out.println("Classe de erro :: " + erro.getStackTrace()[i].getClassName());
+//				System.out.println("Método de erro :: " + erro.getStackTrace()[i].getMethodName());
+//				System.out.println("Linha de erro :: " + erro.getStackTrace()[i].getLineNumber());
+				
+				//MELHORANDO O CÓDIGO DE IMPRESSÃO DE CONSOLE
+				saidaDeTexto.append("\nClasse de erro :: " + erro.getStackTrace()[i].getClassName());
+				saidaDeTexto.append("\nMétodo de erro :: " + erro.getStackTrace()[i].getMethodName());
+				saidaDeTexto.append("\nLinha de erro :: " + erro.getStackTrace()[i].getLineNumber());
+				saidaDeTexto.append("\nClasse da exceção de erro :: " + erro.getStackTrace()[i].getClass().getName());
+				saidaDeTexto.append("\n");
+				saidaDeTexto.append("\n============================================================================");
+			
+			}
+			
+			JOptionPane.showMessageDialog(null, "Erro ao processar notas!"+"\nMensagem de Erro do console: " + saidaDeTexto);
+		} catch (NumberFormatException erro) {
+			//CLASSE JAVA PARA TRABALHAR COM TEXTOS
+			StringBuilder saidaDeTexto = new StringBuilder();
+			
+			/*O EXCEPTION É GENÉRICO*/
+			erro.printStackTrace();/*Imprime a pilha de erro no console java*/
+			
+			/*MESSAGEEM DO ERRO OU CAUSA*/
+			System.out.println("Mensagem de erro :: " + erro.getMessage());
+			
+			for(int i = 0; i < erro.getStackTrace().length; i++) {
+//				System.out.println("Classe de erro :: " + erro.getStackTrace()[i].getClassName());
+//				System.out.println("Método de erro :: " + erro.getStackTrace()[i].getMethodName());
+//				System.out.println("Linha de erro :: " + erro.getStackTrace()[i].getLineNumber());
+				
+				//MELHORANDO O CÓDIGO DE IMPRESSÃO DE CONSOLE
+				saidaDeTexto.append("\nClasse de erro :: " + erro.getStackTrace()[i].getClassName());
+				saidaDeTexto.append("\nMétodo de erro :: " + erro.getStackTrace()[i].getMethodName());
+				saidaDeTexto.append("\nLinha de erro :: " + erro.getStackTrace()[i].getLineNumber());
+				saidaDeTexto.append("\nClasse da exceção de erro :: " + erro.getStackTrace()[i].getClass().getName());
+				saidaDeTexto.append("\n");
+				saidaDeTexto.append("\n============================================================================");
+			}
+			JOptionPane.showMessageDialog(null, "Erro ao informar string em um campo com entrada de número!"
+			+"\nMensagem de Erro do console: " + saidaDeTexto);
+		} catch (Exception erro) {
+			//CLASSE JAVA PARA TRABALHAR COM TEXTOS
+			StringBuilder saidaDeTexto = new StringBuilder();
+			
+			/*O EXCEPTION É GENÉRICO*/
+			erro.printStackTrace();/*Imprime a pilha de erro no console java*/
+			
+			/*MESSAGEEM DO ERRO OU CAUSA*/
+			System.out.println("Mensagem de erro :: " + erro.getMessage());
+			
+			for(int i = 0; i < erro.getStackTrace().length; i++) {
+//				System.out.println("Classe de erro :: " + erro.getStackTrace()[i].getClassName());
+//				System.out.println("Método de erro :: " + erro.getStackTrace()[i].getMethodName());
+//				System.out.println("Linha de erro :: " + erro.getStackTrace()[i].getLineNumber());
+				
+				//MELHORANDO O CÓDIGO DE IMPRESSÃO DE CONSOLE
+				saidaDeTexto.append("\nClasse de erro :: " + erro.getStackTrace()[i].getClassName());
+				saidaDeTexto.append("\nMétodo de erro :: " + erro.getStackTrace()[i].getMethodName());
+				saidaDeTexto.append("\nLinha de erro :: " + erro.getStackTrace()[i].getLineNumber());
+				saidaDeTexto.append("\nClasse da exceção de erro :: " + erro.getStackTrace()[i].getClass().getName());
+				saidaDeTexto.append("\n");
+				saidaDeTexto.append("\n============================================================================");
+			}
+			JOptionPane.showMessageDialog(null, "Erro genérico inesperado!"
+			+"\nMensagem de Erro do console: " + saidaDeTexto);
+		}
 	}
-
 }
