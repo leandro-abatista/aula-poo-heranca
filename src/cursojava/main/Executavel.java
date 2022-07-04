@@ -1,6 +1,7 @@
 package cursojava.main;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,6 +15,7 @@ import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.classesAuxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
+import cursojava.excecao.Excecao;
 import cursojava.interfaces.PermitirAcesso;
 
 
@@ -21,11 +23,11 @@ public class Executavel {
 
 	public static void main(String[] args) {
 		
+		
 		try {
 			
-		File file = new File("arquivo.txt");
-		Scanner scanner = new Scanner(file);
-
+		lerArquivo();
+		
 		String login = JOptionPane.showInputDialog("Informe o Login");
 		String senha = JOptionPane.showInputDialog("Informe o Senha");
 		
@@ -337,5 +339,13 @@ public class Executavel {
 			//sempre é usado quando precisa executar um processo acontecendo erro ou não.
 			JOptionPane.showMessageDialog(null, "Obrigado por aprender java!");
 		}
+	}
+
+	private static void lerArquivo() throws FileNotFoundException {
+			
+			File file = new File("arquivo.txt");
+			Scanner scanner = new Scanner(file);
+			
+		
 	}
 }
