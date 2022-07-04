@@ -333,6 +333,9 @@ public class Executavel {
 			}
 			JOptionPane.showMessageDialog(null, "Erro genérico inesperado!"
 			+"\nMensagem de Erro do console: " + saidaDeTexto);
+		} finally {/*SEMPRE É EXECUTADO OCORRENDO ERROS OU NÃO*/
+			//sempre é usado quando precisa executar um processo acontecendo erro ou não.
+			JOptionPane.showMessageDialog(null, "Obrigado por aprender java!");
 		}
 	}
 }
