@@ -15,6 +15,8 @@ public abstract class Pessoa {
 	protected String numeroCpf;
 	protected String nomeMae;
 	protected String nomePai;
+	protected String email;
+	
 	
 	/*MÉTODO ABSTRACT QUE FICA NA CLASSE PAI, É OBRIGATÓRIO PARA AS CLASSES FILHAS*/
 	public abstract double salario();
@@ -73,6 +75,14 @@ public abstract class Pessoa {
 
 	public void setNomePai(String nomePai) {
 		this.nomePai = nomePai;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	/**
