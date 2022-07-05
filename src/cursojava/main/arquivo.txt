@@ -2,13 +2,13 @@
 
 ---------------------------Lista de Alunos--------------------------------------
 
- | Nome do aluno :: Leandro | Idade do aluno :: 32 | E-mail do aluno :: leandro@teste.com
+Leandro;32;leandro@teste.com
 --------------------------------------------------------------------------
- | Nome do aluno :: Ester | Idade do aluno :: 25 | E-mail do aluno :: ester@teste.com
+Ester;25;ester@teste.com
 --------------------------------------------------------------------------
- | Nome do aluno :: Jackson | Idade do aluno :: 28 | E-mail do aluno :: jackson@teste.com
+Jackson;28;jackson@teste.com
 --------------------------------------------------------------------------
- | Nome do aluno :: Eliana | Idade do aluno :: 33 | E-mail do aluno :: eliana@teste.com
+Eliana;33;eliana@teste.com
 --------------------------------------------------------------------------
 
 -----------------------------Parcelas do boleto----------------------------------
