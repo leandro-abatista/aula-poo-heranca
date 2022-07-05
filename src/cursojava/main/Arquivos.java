@@ -54,17 +54,25 @@ public class Arquivos {
 		/*Instância o objeto que escreve no arquivo*/
 		FileWriter escrever_no_arquivo = new FileWriter(arquivo);
 		
+		escrever_no_arquivo.write("\n");
+		escrever_no_arquivo.write("\n---------------------------Lista de Alunos--------------------------------------");
+		escrever_no_arquivo.write("\n");
+		escrever_no_arquivo.write("\n");
+		
 		/*Varre a lista de alunos*/
 		/*Essa lista pode vir de um banco de dados*/
 		for(Aluno aluno : alunos) {
-			escrever_no_arquivo.write("Nome do aluno :: " + aluno.getNome() 
+			escrever_no_arquivo.write(
+			" | Nome do aluno :: " + aluno.getNome() 
 			+ " | Idade do aluno :: " + aluno.getIdade() 
 			+ " | E-mail do aluno :: " + aluno.getEmail());
 			escrever_no_arquivo.write("\n--------------------------------------------------------------------------");
 			escrever_no_arquivo.write("\n");
 		}
 		
-		escrever_no_arquivo.write("Meu texto do arquivo 2\n");
+		escrever_no_arquivo.write("\n");
+		escrever_no_arquivo.write("-----------------------------Parcelas do boleto----------------------------------");
+		escrever_no_arquivo.write("\n");
 		
 		/*Varre a lista de parcelas*/
 		for (int parcela = 1; parcela <= 12; parcela++) {
