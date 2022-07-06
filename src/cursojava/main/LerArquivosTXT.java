@@ -17,7 +17,7 @@ public class LerArquivosTXT {
 		
 		FileInputStream entradaArquivo = 
 				new FileInputStream(
-						new File("C://ws-alex-dev-treinamento/aula-poo-heranca/src/cursojava/main/arquivoLer.txt"));
+						new File("C://ws-alex-dev-treinamento/aula-poo-heranca/src/cursojava/main/arquivo.csv"));
 		
 		
 		Scanner lerArquivo = new Scanner(entradaArquivo, "UTF-8");

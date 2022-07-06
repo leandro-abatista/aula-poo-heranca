@@ -41,7 +41,7 @@ public class Arquivos {
 		alunos.add(aluno3);
 		alunos.add(aluno4);
 		
-		File arquivo = new File("C://ws-alex-dev-treinamento/aula-poo-heranca/src/cursojava/main/arquivoLer.txt");
+		File arquivo = new File("C://ws-alex-dev-treinamento/aula-poo-heranca/src/cursojava/main/arquivo.csv");
 		
 		if (!arquivo.exists()) {//se o arquivo não existe, vai ser criado automaticamente
 			arquivo.createNewFile();
