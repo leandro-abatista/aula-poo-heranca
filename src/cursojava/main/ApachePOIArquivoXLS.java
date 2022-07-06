@@ -51,10 +51,27 @@ public class ApachePOIArquivoXLS {
 		diretor4.setDataNascimento("05/05/1995");
 		diretor4.setNumeroCpf("12345612312");
 		
+		Diretor diretor5 = new Diretor();
+		diretor5.setNome("jessica calana mendes");
+		diretor5.setIdade(28);
+		diretor5.setEmail("jessica@bol.com.br");
+		diretor5.setDataNascimento("30/05/1994");
+		diretor5.setNumeroCpf("12312312312");
+		
+		Diretor diretor6 = new Diretor();
+		diretor6.setNome("mariana rocha tenente");
+		diretor6.setIdade(32);
+		diretor6.setEmail("mariana@gmail.com");
+		diretor6.setDataNascimento("05/05/1990");
+		diretor6.setNumeroCpf("333322233333");
+		
 		diretores.add(diretor);
 		diretores.add(diretor2);
 		diretores.add(diretor3);
 		diretores.add(diretor4);
+		diretores.add(diretor5);
+		diretores.add(diretor6);
+		
 		
 		//usando a biblioteca do apache poi
 		HSSFWorkbook hssfWorkbook = new HSSFWorkbook();/*VAI SER USADO PARA ESCREVER NA PLANILHA*/
