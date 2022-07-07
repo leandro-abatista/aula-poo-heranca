@@ -2,6 +2,7 @@ package cursojava.main;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -10,6 +11,9 @@ import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 import cursojava.classes.Usuario;
 
@@ -76,6 +80,23 @@ public class escreveGson {
 		escreve_no_arquivo.close();
 		
 		System.out.println("Arquivo criado com sucesso!");
+		
+		System.out.println();
+		System.out.println("::::::::::::::::::::::::::::::::LENDO ARQUIVO JSON:::::::::::::::::::::::::::::::::::");
+		
+		//lendo o arquivo
+		FileReader fileReader = new FileReader("C:\\ws-alex-dev-treinamento\\aula-poo-heranca\\src\\cursojava\\main\\arquivo.json");
+		//colocando o json num array, para colocar o json em cada posição separado
+		JsonArray jsonArray = (JsonArray) JsonParser.parseReader(fileReader);
+		List<Usuario> listaDeUsuarios = new ArrayList<>();
+		
+		//para cada jsonElement encontrado no jsonArray
+		for (JsonElement jsonElement : jsonArray) {
+			Usuario usuario = new Gson().fromJson(jsonElement, Usuario.class);/*Aqui converte o json para o tipo objeto usuário*/
+			listaDeUsuarios.add(usuario);/*Adiciona o objeto usuário na lista*/
+		}
+		
+		System.out.println("Leitura do arquivo JSON :: " + listaDeUsuarios);
 	}
 
 }
