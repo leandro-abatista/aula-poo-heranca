@@ -15,6 +15,8 @@ public class ArrayVetor {
 		notas[2] = 80;
 		notas[3] = 70;
 		
-		System.out.println("Posição 0 = " + notas);
+		for (int posicao = 0; posicao < 5; posicao++) {
+			System.out.println("Posição "+ (posicao + 1) +" - Nota : " + notas[posicao]);
+		}
 	}
 }
