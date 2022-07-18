@@ -58,7 +58,7 @@ public class Aluno extends Pessoa {
 		double somaNotas = 0.0;//inicia com 0
 		//varrendo/percorrendo a lista de disciplinas
 		for (Disciplina disciplina : disciplinas) {
-			somaNotas += disciplina.getNota();
+			somaNotas += disciplina.getMediaNotas();
 		}
 		
 		//return somaNotas / 4;//pode ser assim ou pode
